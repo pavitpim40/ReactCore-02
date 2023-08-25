@@ -58,7 +58,22 @@ function App() {
 
     // Wrapper Function : () => callAnotherFunction
     // return <input type='text' onChange={(e) => handleEvent(e, 5, 6, 7)} />;
-    return <input type='text' onChange={() => handleEvent2('Hi', 9, true)} />;
+    // return <input type='text' onChange={() => handleEvent2('Hi', 9, true)} />;
+    function Logic(x) {
+        console.log('Logic');
+        console.log(x * 2);
+        // x *2
+    }
+
+    function Wrapper(event) {
+        // console.log(event);
+        console.log('Wrapper');
+        Logic(5);
+    }
+
+    // return <input onChange={Wrapper} />;
+    return <input onChange={(event) => Logic(5)} />;
+    // return <input onChange={Logic} />;
 }
 
 // ReactDOM
