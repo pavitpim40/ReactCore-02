@@ -7,7 +7,10 @@
         "start": "webpack-dev-server --mode development --open --hot --port 3000",
         "build": "webpack --mode production"
     },
-    "keywords": [],
+    "keywords": [
+        "react",
+        "todo-list"
+    ],
     "author": "codecamp-thailand",
     "license": "ISC",
     "devDependencies": {
@@ -24,6 +27,7 @@
         "webpack-dev-server": "^4.6.0"
     },
     "dependencies": {
+        "dayjs": "^1.11.9",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     }
