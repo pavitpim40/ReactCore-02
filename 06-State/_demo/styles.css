@@ -26,3 +26,11 @@ h1 {
 .text-blue {
     color: blue;
 }
+
+.container {
+    background-color: wheat;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
