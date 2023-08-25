@@ -50,22 +50,22 @@
 function Counter() {
     // #2 Handle Logic #1
 
-    const [state, setState] = React.useState(10);
+    const [count, setCount] = React.useState(10);
 
     function handleIncrease() {
-        setState(state + 1);
+        setCount(count + 1);
     }
     function handleDecrease() {
-        setState(state - 1);
+        setCount(count - 1);
     }
     function handleReset() {
-        setState(0);
+        setCount(0);
     }
     return (
         <>
             <div className='container'>
                 <button onClick={handleIncrease}>Increase</button>
-                <span>{state}</span>
+                <span>{count}</span>
                 <button onClick={handleDecrease}>Decrease</button>
                 <button onClick={handleReset}>Reset</button>
             </div>
@@ -73,7 +73,36 @@ function Counter() {
     );
 }
 
+// #2 Condition Rendering
+
+function App() {
+    const [isDark, setIsDark] = React.useState(false);
+
+    function handleToggle() {
+        setIsDark(!isDark);
+    }
+    console.log(isDark ? 'Dark' : 'Light');
+    return (
+        <div>
+            {/* HardCode */}
+            {/* <h3> Light-Mode </h3>
+            <h3> Dark-Mode </h3> */}
+
+            {/* Condition Render Tag */}
+            {/* {isDark ? <h3>Dark</h3> : <h3>Light</h3>} */}
+
+            {/* Condition Render String */}
+            {/* <h3>{isDark ? 'Dark' : 'Light'} </h3> */}
+
+            {/* {isDark ? <h3 className='dark'>Dark</h3> : <h3 className='light'>Light</h3>} */}
+
+            <h3 className={`${isDark ? 'dark' : 'light'}`}> {isDark ? 'Dark' : 'Light'}</h3>
+            <button onClick={handleToggle}> Toggle mode </button>
+        </div>
+    );
+}
+
 // ReactDOM
 const domRoot = document.getElementById('root');
 const root = ReactDOM.createRoot(domRoot);
-root.render(<Counter />);
+root.render(<App />);
