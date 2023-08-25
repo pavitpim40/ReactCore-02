@@ -12,7 +12,7 @@ function App() {
 
     // type : TEXT
     // return <input type="text" onChange={handleChange} />;
-    // return <input type="text" onChange={(e) => console.log(e.target.value)} />;
+    // return <input type='text' onChange={(e) => console.log(e.target.value)} />;
 
     // type : Checkbox
     // const handleCheck = (event) => {
@@ -25,24 +25,40 @@ function App() {
     //     </div>
     // );
 
-    const handleSelect = (event) => {
-        console.log('select...');
-        console.log(event);
-    };
+    // const handleSelect = (event) => {
+    //     console.log('select...');
+    //     console.log(event);
+    // };
 
     // Select
     // Don't Imitate, UnderStand !!
-    return (
-        <>
-            <label htmlFor='gender'>Please choose your gender</label>
-            <select onChange={handleSelect} id='gender'>
-                <option value='male'>male</option>
-                <option value='female'>female</option>
-                <option value='lgbtq'>LGBTQ</option>
-                <option value='not-specific'>not-specific</option>
-            </select>
-        </>
-    );
+    // return (
+    //     <>
+    //         <label htmlFor='gender'>Please choose your gender</label>
+    //         <select onChange={handleSelect} id='gender'>
+    //             <option value='male'>male</option>
+    //             <option value='female'>female</option>
+    //             <option value='lgbtq'>LGBTQ</option>
+    //             <option value='not-specific'>not-specific</option>
+    //         </select>
+    //     </>
+    // );
+
+    const handleEvent = (event, a, b, c) => {
+        console.log(event.target.value);
+        console.log(a, b, c);
+    };
+
+    const handleEvent2 = (a, b, c) => {
+        console.log(a, b, c);
+    };
+
+    // Problem : Can't custom parameter
+    // return <input type='text' onChange={handleEvent} />;
+
+    // Wrapper Function : () => callAnotherFunction
+    // return <input type='text' onChange={(e) => handleEvent(e, 5, 6, 7)} />;
+    return <input type='text' onChange={() => handleEvent2('Hi', 9, true)} />;
 }
 
 // ReactDOM
